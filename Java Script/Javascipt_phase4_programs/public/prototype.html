@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Prototypes</title>
+</head>
+<body>
+<script>
+     function Employee(firstName,lastName)
+     {
+    	 this.firstName=firstName;
+    	 this.lastName=lastName;
+     }
+     
+     Employee.prototype.fullName=function()
+     {
+    	 return this.firstName+" "+this.lastName;
+     }
+     
+     var employee1=new Employee("Martin", "Roy");
+     var employee2=new Employee("Duke", "William");
+     
+     document.writeln(employee1.fullName()+"<br/>");
+     document.writeln(employee2.fullName()+'<br>');
+     
+     Employee.prototype.company="Simplilearn";
+     
+     var employee1=new Employee("Martin", "Roy");
+     var employee2=new Employee("Duke", "William");
+     
+     document.write("<br>");
+     document.write((employee1.firstName)+" "+employee1.lastName+", "+employee1.company+"<br>");
+     document.write((employee2.firstName)+" "+employee2.lastName+", "+employee2.company+'<br>');
+     document.write(employee1.fullName() +" and "+ employee2.fullName());
+     
+</script>
+</body>
+</html>

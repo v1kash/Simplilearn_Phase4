@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Prototype methods</title>
+</head>
+<body>
+<script>
+	function Student(){
+		this.name = 'John';
+		this.gender = 'Male';
+	}
+	
+	Student.prototype.age = 15;
+	var studObj1 = new Student();
+	alert(studObj1.age);
+	var studObj2=new Student();
+	
+	
+	Student.prototype = {age : 35};
+	var studObj3 = new Student();
+	
+	alert(studObj3.age);
+	alert(studObj1.age);
+	alert(studObj2.age);
+	
+	var studObj = new Student();
+	
+	document.write(Student.prototype+'<br/>');
+	document.write(studObj.prototype+'<br/>');
+	document.write(studObj._proto_+'<br/>');
+	
+	document.write(typeof Student.prototype+'<br/>');
+	document.write(typeof studObj._proto_+'<br/>');
+	
+	document.write(Student.prototype === studObj._proto_);
+	
+	
+	// example
+	function Stud(){
+		this.name = 'John';
+		this.gender = 'M';
+	}
+	
+	var studObj = new Stud();
+	Stud.prototype.sayHi = function(){
+		alert("Hi");
+	};
+	
+	var studObj1 = new Stud();
+	var proto = Object.getPrototypeOf(studObj1);
+	
+	alert(proto.constructor);
+	alert(proto.sayHi);
+	
+	// prototype methods
+	let animal = {
+			eats: true
+	};
+	
+	// create a new object with animal as a prototype
+    let rabbit = Object.create(animal);
+    alert("create method of prototype: "+rabbit.eats); // true
+    alert("getPrototypeOf method of prototype: "+ (Object.getPrototypeOf(rabbit) === animal)); //true
+    
+    // Object.setPrototypeOf(rabbit,{});
+  	
+</script>
+</body>
+</html>
