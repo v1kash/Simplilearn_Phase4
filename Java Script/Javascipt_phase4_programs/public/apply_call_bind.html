@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	let cat = {type:'Cat', sound: 'Meow'};
+	let dog = {type: 'Dog', sound: 'Woof'};
+	
+	// only for js 5
+	let say = function(greeting){
+		document.write(greeting);
+		document.write("<br>");
+		
+	//access current this
+	document.write(this.type+' says '+this.sound);
+	document.write("<br><br>");
+	};
+	
+	// apply 
+	say.apply(cat, ['Hi']);
+	say.apply(dog, ['Hi']);
+	
+	//call
+	say.call(cat,'Hoooo');
+	say.call(dog,'Hoooo');
+	
+	// bind
+	let car = {
+			speed:5,
+			start:function(){
+				document.write('Start with'+this.speed+' km/h');
+			}
+	};
+	
+	let aircraft = {
+			speed: 10,
+			fly: function(){
+				document.write('Flying');
+			}
+	}
+	
+	let taxling = car.start.bind(aircraft);
+	taxling();
+</script>
+</body>
+</html>
