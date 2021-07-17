@@ -58,7 +58,7 @@ class Admin extends React.Component {
       
       validateLogin(e){
         e.preventDefault();
-        alert("Started Login Validation");
+       // alert("Started Login Validation");
          if(e.target.username.value === this.state.username &&  e.target.password.value===this.state.password)
             {
              this.handleLogin();
