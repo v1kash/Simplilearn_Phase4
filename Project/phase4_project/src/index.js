@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Admin from "./Admin";
-import NewAdmin from "./NewAdmin";
 
 // ReactDOM.render(
 //   <React.StrictMode>
@@ -13,7 +12,7 @@ import NewAdmin from "./NewAdmin";
 //   document.getElementById('root')
 // );
 
-ReactDOM.render(<NewAdmin/>, document.getElementById("root"));
+ReactDOM.render(<Admin/>, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
