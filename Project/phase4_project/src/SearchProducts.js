@@ -191,7 +191,7 @@ class SearchProducts extends React.Component{
                                 return <ProductDetail key={product.id} product={product} /> 
                             })   
                         }
-                            <input type="submit" value="Submit"/>
+                            <input type="submit" value="Go to Cart"/>
                         </form>
                     </div>
                     );
