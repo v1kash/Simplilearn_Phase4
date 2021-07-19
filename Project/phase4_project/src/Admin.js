@@ -1,7 +1,5 @@
 import React from "react";
-import { findAllInRenderedTree } from "react-dom/test-utils";
-import { Route, NavLink, HashRouter } from "react-router-dom";
-
+import SearchProducts from "./SearchProducts"
 
 
 class Admin extends React.Component {
@@ -74,21 +72,17 @@ class Admin extends React.Component {
       render() {
           let page;
           if(this.state.isLogin)
-          {
-               page = (
-                   <div>
-
-                   </div>
-               );
+          {  
+            page = <SearchProducts username={this.state.username}/>;
           }
           else{
 
             if(this.state.isLoginClicked){
                // page = <LoginDetail handleLogin={this.handleLogin} username={this.state.username} password={this.state.password}/>;
                   page = (
-                  <div className="content">
+                  <div>
                     <form type="post" onSubmit={(e)=>{this.validateLogin(e)}}>
-                      <h4>Login</h4>
+                      <h3>Login</h3>
                       <label for="username">Enter Name</label>
                       <input type="text" id="username" name="username" required></input>
                       <br />
@@ -106,7 +100,7 @@ class Admin extends React.Component {
                         page = (
                             <div>
                             <p>
-                              Hello, your password has been changed to {this.state.password} succesfully.
+                              Hello, your password has been changed succesfully.
                             </p>
                             <button onClick={this.handleLoginClicked}>Continue</button>
                           </div>
@@ -114,9 +108,9 @@ class Admin extends React.Component {
                 } 
                 else {
                   page = (
-                    <div className="content">
+                    <div>
                     <form type="post" onSubmit={this.handlePassChange}>
-                      <h4>Password Change</h4>
+                      <h3>Password Change</h3>
                       <label for="password">Enter new password</label>
                       <input type="password" id="password" name="password" required></input>
                       <br />
@@ -128,9 +122,9 @@ class Admin extends React.Component {
             }
             else{
               page = (
-                <div className="content">
+                <div>
                     <div>
-                      <h3>Welcome to Kitchen story!</h3>
+                      <h2>Welcome to Kitchen story!</h2>
                       <h4>You can Login or change your password using the buttons below:</h4>
                       <div>
                        <button onClick={this.handleLoginClicked}>Login</button>
@@ -144,17 +138,21 @@ class Admin extends React.Component {
 
         return (
                 <div>
+                 <div className="header">
                 <h1>KITCHEN STORY</h1>
+                </div>
                 {/* status check */}
-                <div>
+                {/* <div>
                       {this.state.isLoginClicked.toString()}
                       <br></br>
                       {this.state.isChangePassClicked.toString()}
                       <br></br>
                       {this.state.password}
-                </div>
+                </div> */}
                 {/* status check */}
+                <div className="content">
                  {page}
+                 </div>
                 </div>
               );
 

@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   /* additional */
-  background-color: palegreen;
+  background-color: lightblue;
   padding: 20px;
 }
 
@@ -25,7 +25,8 @@ li {
   font-family: sans-serif;
 }
 .content {
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: lightgoldenrodyellow;
   padding: 20px;
 }
 .content h2 {
@@ -36,3 +37,11 @@ li {
   margin-bottom: 10px;
 }
 
+.header {
+  color:whitesmoke;
+  font-weight: bold;
+  background-color: blue;
+  padding: 20;
+  margin: 0;
+  text-align: center;
+}
